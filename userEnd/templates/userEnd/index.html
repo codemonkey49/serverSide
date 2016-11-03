@@ -1,0 +1,11 @@
+{%extends "base.html"%}
+<html>
+{%block header%}active items{%endblock%}
+{%block body%} 
+{%for item in store%}
+    <h1><a href={% url 'userEnd:detail' itemID=item.itemID%}>{{item.itemID}}</a></h1>
+{%endfor%}
+
+{%endblock%}
+
+</html>

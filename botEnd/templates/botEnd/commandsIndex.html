@@ -1,0 +1,9 @@
+{%extends "base.html"%}
+{%block header%}commands by PID{%endblock%}
+
+{%block body%}
+{%for i in PIDs%}
+    <h1><a href={% url 'botEnd:commandsDetail' PID=i%}>{{i}}</a></h1>
+{%endfor%}
+
+{%endblock%}

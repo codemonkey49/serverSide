@@ -1,0 +1,9 @@
+{%extends "base.html"%}
+{%block header%}commands for {{commands.0.PID}}{%endblock%}
+
+{%block body%}
+{%for i in commands%}
+{{i.bs}}  {{i.itemID}}  {{i.amt}}  {{i.price}}
+{%endfor%}
+
+{%endblock%}

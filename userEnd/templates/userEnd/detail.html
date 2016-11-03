@@ -1,0 +1,44 @@
+{%extends "base.html"%}
+<!DOCTYPE html>
+<html>
+    {%block header%}
+    detail view: {{itemID}}
+    {%endblock%}
+    
+    
+    {%block body%}
+    
+    <h1><a href={% url 'userEnd:detail' itemID=itemID%}>{{itemID}}</a></h1>
+    
+    {% url 'userEnd:graph' itemID=itemID as the_url %}
+    <img src="{{ the_url }}">
+    
+    
+    
+    <h1>stock</h1>
+    <table border=1 cellpadding="5" cellspacing="5">
+        <tr>
+            <td><b>PID</b></td>
+            <td><b>amount</b></td>
+            <td><b>price</b></td>
+        </tr>
+    
+    {%for i in stockLog%}
+   
+        <tr>
+            <td>{{i.PID}}</td>
+            <td>{{i.amt}}</td>
+            <td>{{i.price}}</td>
+        </tr>
+    
+    
+    {%endfor%}
+    </table>
+    
+    
+    
+     
+    
+    
+    {%endblock%}
+</html>

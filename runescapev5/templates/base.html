@@ -1,0 +1,50 @@
+<style type="text/css">
+    section{
+        width: 80%;
+        height: 200px;
+        background: #FFE4C4;
+        margin: auto;
+        padding: 10px;
+    }
+    .header{
+        text-align:center;
+    }
+    .sideNav {
+        width: 15%;
+        height: 200px;
+        background: #E9967A;
+        text-align:center;
+        vertical-align:top;
+        float: left;
+        }
+    .body{
+        color:red;
+        padding-left: 25%;
+        background:#FFE4C4;
+    }
+    
+</style>
+
+<html>
+<section>
+     <div id="header" class="header"><h1>{%block header%}
+     header
+     {%endblock%}</h1></div> 
+    
+    
+    <div id="sideNav" class="sideNav">{%block sideNav%}
+    <ul>
+        <li><a href= {%url "userEnd:index"%} >home</a></li>
+        <li><a href= {%url "botEnd:index"%} >bot end</a></li>
+        <li><a href= {%url "botEnd:commands"%} >commands</a></li>
+
+    
+    {%endblock%}</ul></div>
+    
+    
+    <div id="body" class="body">{%block body%}<h1>
+        body
+        </h1>{%endblock%}</div>
+    
+</section>
+</html>
